@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.container {
+    max-width: 61rem;
+}
+
+.containerMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloCadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-weight: 900;
+    font-size: 25px;
+    opacity: 0.8;
+    margin-top: 5px;
+    
+}
+
+
+
+@media (min-width: 640px) {
+
+    table {
+        display: inline-table !important;
+    }
+
+    thead tr:not(:first-child) {
+        display: none;
+    }
+}
+
+td:not(:last-child) {
+    border-bottom: 0;
+}
+
+th:not(:last-child) {
+    border-bottom: 2px solid rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 360px) {
+    .tituloCadastro {
+        font-size: 23px;
+    }
+}
