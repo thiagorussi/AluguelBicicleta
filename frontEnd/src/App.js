@@ -211,7 +211,6 @@ function App() {
         alert(error.response.data.message)
       })
       .then((response) => {
-
         setAlugueis(alugueis.filter((aluguel) => {
           return aluguel.id != codigo
         }))
@@ -358,22 +357,17 @@ function App() {
                             <option value="" data-default disabled selected>Selecione a Bicicleta</option>
                             {
 
-                              bikes.map((bike) => { // ARRUMAR PARA QUE NÃO SEJA POSSÍVEL SELECIONAR BICICLETA QUE JÁ ESTÁ ALUGADA 
-
-                                // alugueis.forEach(aluguel => {
-                                //   if (aluguel.bikeId == bike.id) {
-
-                                //     return (
-                                //       <option value={bike.id} key={bike.id} disabled>{bike.name}</option>
-                                //     )
-                                //     
-                                //   }
-                                return (
-                                  //<option value={bike.id} disabled={alugado}>{bike.modelo}</option>
-
-                                  <option value={bike.id}>{bike.nameBike}</option>
-                                )
-                                // });
+                              bikes.map((bike) => { // SELECIONA SOMENTE AS BICICLETAS QUE ESTÃO DISPONÍVEIS 
+                                
+                                if(bike.rent == false){
+                                  return (
+                                    <option value={bike.id}>{bike.nameBike}</option>
+                                  )
+                                }else{
+                                  return (
+                                    <option className='text-red-500' value={bike.id} disabled>{`${bike.nameBike} - Alugado`}</option>
+                                  )
+                                }
 
                               })}
                           </select>
