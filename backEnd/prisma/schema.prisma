@@ -26,9 +26,7 @@ model Bike {
   id        Int     @id @default(autoincrement())
   nameBike  String
   model     String
-  color     String
-  price     Float
-  
+  color     String 
   // userId    Int
   // user      User     @relation(fields: [userId], references: [id])
   rent Rent[]

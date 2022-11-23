@@ -76,7 +76,13 @@ server.post('/bike', async (req, res) => { //CRIAR BICICLETA
 
 server.get('/bikes', async (req, res) => { // LISTAR TODAS AS BICICLETAS
     
-    const bikes = await prisma.bike.findMany();
+    //const bikes = await prisma.bike.findMany();
+    const bikes = await prisma.bike.findMany({
+        include: {
+            rent: true
+        }
+    });
+
     return res.json(bikes);
 });
 
